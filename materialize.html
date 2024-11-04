@@ -24,6 +24,7 @@
         border-radius: 50%;
        }
    </style>
+
 </head>
 <body>
 
@@ -107,27 +108,82 @@
    </div>
    <div class="row">
 
-
        <div class="col s4">
            <img src="Images/Bagel.png" alt="Bakery Image" class="responsive-img shadow">
            <blockquote>Fresh Bagels</blockquote>
        </div>
        <div class="col s4">
-           <img src="images/Cookies.png" alt="Bakery Image" class="responsive-img shadow">
+           <img src="Images/Cookies.png" alt="Bakery Image" class="responsive-img shadow">
            <blockquote>We Love Cookies</blockquote>
        </div>
        <div class="col s4">
-           <img src="images/Shortbread.JPG" alt="Bakery Image" class="responsive-img shadow">
+           <img src="Images/Shortbread.JPG" alt="Bakery Image" class="responsive-img shadow">
            <blockquote>Especially Shortbread</blockquote>
        </div>
       </div>
 
       
+      <div class="container">
+        <ul class="collapsible" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header"><i class="material-icons"></i>First</div>
+              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+              <div class="collapsible-header"><i class="material-icons"></i>Second</div>
+              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+              <div class="collapsible-header"><i class="material-icons"></i>Third</div>
+              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+          </ul>
+
       <div class="video-container"> 
         <iframe width="866" height="487" src="https://www.youtube.com/embed/IfcnBiNRXEY" title="Bakery Tour" allowfullscreen></iframe>
         </div>
-    
-            
+
+        <div class="carousel">
+            <a class="carousel-item" href="#one!">
+                <img src="Images/bakery #1.png">
+            </a>
+            <a class="carousel-item" href="#two!">
+                <img src="Images/bakery #2.png">
+            </a>
+            <a class="carousel-item" href="#three!">
+                <img src="Images/bakery #3.png">
+            </a>
+            <a class="carousel-item" href="#four!">
+                <img src="Images/bakery #4.png">
+            </a>
+          </div>
+
+
+        <div id="radio-section" class="section container">
+            <h2>Select Your Favorite Pastry</h2>
+            <form>
+                <p>
+                    <label>
+                        <input name="pastry" type="radio" value="Croissant" onclick="displayPastry()"/>
+                        <span>Croissant</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="pastry" type="radio" value="Muffin" onclick="displayPastry()"/>
+                        <span>Muffin</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="pastry" type="radio" value="Donut" onclick="displayPastry()"/>
+                        <span>Donut</span>
+                    </label>
+                </p>
+            </form>
+            <div id="pastry-response"></div>
+        </div>
+                 
        
    <!-- Contact Section -->
    <div id="contact" class="section section-bg">
@@ -172,5 +228,37 @@
            </div>
        </div>
    </footer>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+   <script>
+     $('.carousel').carousel({fullWidth: true});
+    
+     // Initialize modal
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+    });
+
+
+    // Function to display selected pastry
+    function displayPastry() {
+        const selectedPastry = document.querySelector('input[name="pastry"]:checked').value;
+        document.getElementById('pastry-response').innerText = `You selected: ${selectedPastry}`;
+    }
+    // Function to handle email subscription form submission
+    function submitEmail(event) {
+        event.preventDefault();
+        const email = document.getElementById('email').value;
+        document.getElementById('email-response').innerText = `Thank you for subscribing! Updates will be sent to: ${email}`;
+        document.getElementById('email').value = ''; // Clear the input
+
+
+        // Display modal
+        const modalText = document.getElementById('modal-content-text');
+        modalText.innerText = `Thank you for subscribing! Updates will be sent to: ${email}`;
+        const modal = M.Modal.getInstance(document.getElementById('modal1'));
+        modal.open();
+    }
+</script>  
 </body>
 </html>
