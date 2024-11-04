@@ -4,8 +4,8 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Bakery Delight</title>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
    <style>
        .header-bg {
            background-color: #ec9454; /* Light pink background */
@@ -41,9 +41,6 @@
        </div>
    </div>
    </nav>
-
-
-
 
    <!-- Header Section -->
    <div class="section header-bg center-align">
@@ -145,16 +142,16 @@
 
         <div class="carousel">
             <a class="carousel-item" href="#one!">
-                <img src="Images/bakery #1.png">
+                <img src="Images/bakery1.png">
             </a>
             <a class="carousel-item" href="#two!">
-                <img src="Images/bakery #2.png">
+                <img src="Images/Bakery.JPG">
             </a>
             <a class="carousel-item" href="#three!">
-                <img src="Images/bakery #3.png">
+                <img src="Images/bakery3.png">
             </a>
             <a class="carousel-item" href="#four!">
-                <img src="Images/bakery #4.png">
+                <img src="Images/bakery4.png">
             </a>
           </div>
 
@@ -229,16 +226,18 @@
        </div>
    </footer>
 
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
    <script>
-     $('.carousel').carousel({fullWidth: true});
-    
-     // Initialize modal
-    document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.carousel');
+            var instances = M.Carousel.init(elems);
+
         var elems = document.querySelectorAll('.modal');
         var instances = M.Modal.init(elems);
+ 
+        var elems = document.querySelectorAll('.collapsible');
+        var instances = M.Collapsible.init(elems);
     });
-
 
     // Function to display selected pastry
     function displayPastry() {
