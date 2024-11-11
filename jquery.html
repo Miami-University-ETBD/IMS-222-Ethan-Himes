@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delicious Bakery</title>
+</head>
+<body>
+<!-- Header of the website -->
+<header>
+   <h1>Welcome to Delicious Bakery</h1>
+  
+   <div class="navbar">
+       <a href="index.html">Bakery Home</a>
+       <a href="recipes.html">Recipe Cards</a>
+       <a href="celebrity.html">Celebrity Favorites</a>
+       <a href="materialize.html">Materialize</a>
+       <a href="jquery.html">JQuery</a>
+   </div>
+
+
+</header>
+<body>
+
+    <script>
+        $(document).ready(function(){
+          $("button").click(function(){
+            $("p").hide();
+          });
+        });
+        </script>
+        </head>
+        <body>
+        
+        <h2>Welcome to our bakery!</h2>
+        
+        <p>Heres some info about our location!</p>
+        
+        <button> hide </button>
+
+        <script> 
+            $(document).ready(function(){
+              $("#flip").click(function(){
+                $("#panel").slideDown("slow");
+              });
+            });
+            </script>
+            <style> 
+            #panel, #flip {
+              padding: 5px;
+              text-align: center;
+              background-color: #e5eecc;
+              border: solid 1px #c3c3c3;
+            }
+            
+            #panel {
+              padding: 50px;
+              display: none;
+            }
+            </style>
+            </head>
+            <body>
+             
+            <div id="flip">information on our location</div>
+            <div id="panel">We bake a variety of goods from bagels to cupcakes!</div>
+            </body>
+
+
+            <script>
+                $(document).ready(function(){
+                  $("#btn1").click(function(){
+                    alert("Text: " + $("#test").text());
+                  });
+                  $("#btn2").click(function(){
+                    alert("HTML: " + $("#test").html());
+                  });
+                });
+                </script>
+                </head>
+                <body>
+                
+                <p id="test">Error</p>
+                
+                <button id="btn1">Order here</button>
+                
+                
+                </body>
+</body>
+</html>

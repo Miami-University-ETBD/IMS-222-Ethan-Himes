@@ -82,7 +82,7 @@ ul.no-bullets {
 image-rendering: auto;
 }
 
-img {
+.materializeimg {
   border-radius: 50%;
   height: auto;
 }
